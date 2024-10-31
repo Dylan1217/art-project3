@@ -16,22 +16,32 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+  position: relative;
 }
 
+.main-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers it absolutely */
+    z-index: 1; /* Ensures it’s above the trophies */
+  }
+
 /* Style for the "Kachow!" heading */
-h1 {
+.main-text h1 {
   font-family: 'Bangers', sans-serif;
   font-size: 8rem;
   color: #ff6347;
   text-align: center;
-  animation: horizontalSpin 3s ease-in-out infinite;
+  animation: horizontalSpin 5s ease-in-out infinite;
   transform-style: preserve-3d; /* Enables 3D transformation */
+  
 }
 
 /* Horizontal spin animation */
 @keyframes horizontalSpin {
   0%, 100% { transform: rotateX(0deg); }
-  50% { transform: rotateX(360deg); } /* Complete flip along the X-axis */
+  50% { transform: rotateY(360deg); } /* Complete flip along the X-axis */
 }
 
 
@@ -47,17 +57,22 @@ h1 {
   .trophy-group img {
     width: 50px; /* Adjust size as needed */
     position: absolute;
-    animation: bounce 3s ease-in-out infinite; /* Infinite bounce animation */
+    animation: bounce 3.6s ease-in-out infinite; /* Infinite bounce animation */
   }
   
   /* Initial positions and staggered animation delays for each trophy */
-  .trophy1 { left: 10%; top: 0; animation-delay: 0s; }
-  .trophy2 { left: 30%; top: 0; animation-delay: 0.5s; }
-  .trophy3 { left: 60%; top: 0; animation-delay: 1s; }
-  .trophy4 { left: 80%; top: 0; animation-delay: 1.5s; }
-  
-  /* Bounce animation */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); } /* Start and end at the top */
-    50% { transform: translateY(80vh); } /* Fall to near the bottom */
-  }
+.trophy1 { left: 10%; top: 0; animation-delay: 0s; }
+.trophy2 { left: 24%; top: 0; animation-delay: 0.3s; }
+.trophy3 { left: 32%; top: 0; animation-delay: 0.6s; }
+.trophy4 { left: 41%; top: 0; animation-delay: 0.9s; }
+.trophy5 { left: 48%; top: 0; animation-delay: 1.2s; }
+.trophy6 { left: 57%; top: 0; animation-delay: 1.5s; }
+.trophy7 { left: 65%; top: 0; animation-delay: 1.8s; }
+.trophy8 { left: 72%; top: 0; animation-delay: 2.1s; }
+.trophy9 { left: 86%; top: 0; animation-delay: 2.4s; }
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); } /* Start and end at the top */
+  50% { transform: translateY(80vh); } /* Fall to near the bottom */
+}
