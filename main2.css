@@ -1,0 +1,182 @@
+/* Place CSS styles here */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/* Base style for body to center heading */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.main-content{
+    display: none;
+    position: relative;
+}
+
+/* Road wrapper to fill the entire screen */
+.road-wrapper {
+    position: fixed; /* Use fixed positioning to fill the screen */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide any overflow */
+    z-index: 0; /* Behind everything else */
+  }
+  
+  /* Style for the road image */
+  .road-wrapper img {
+    width: 100%; /* Scale width to 100% of the wrapper */
+    height: 100%; /* Scale height to 100% of the wrapper */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+  }
+
+.kachow1 {
+    position: absolute;
+    left: 30vw; /* Center horizontally */
+    top: 10vw; /* Position below the first Kachow! */
+    transform: translate(-50%, -50%); /* Center text */
+    font-size: 4rem; /* Different font size */
+    color: #fc9d10; /* Keep the same color or change it */
+    animation: horizontalSpin 5s ease-in-out infinite; 
+    z-index: 3;
+}
+
+.kachow2 {
+  position: absolute;
+  left: 1%; /* Center horizontally */
+  top: 50%; /* Position below the first Kachow! */
+  transform: translate(-50%, -50%); /* Center text */
+  font-size: 4rem; /* Different font size */
+  color: #f53817; /* Keep the same color or change it */
+  animation: horizontalSpin 5s ease-in-out infinite; 
+  z-index: 3;
+}
+
+/* Style for the "Kachow!" heading */
+.h1 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 8rem; /* First Kachow! size */
+  color: #ff6347;
+  border: 5px solid black; /* Black border */
+  border-radius: 10px; /* Rounded corners, optional */
+  margin: 0; /* Remove default margin */
+  animation: horizontalSpin 5s ease-in-out infinite; /* Animation for h1 */
+  
+}
+
+.h2 {
+  font-family: 'Bangers', sans-serif; /* Same font for consistency */
+  color: #ff6347; /* Optionally change color */
+  border: 5px solid black; /* Black border */
+  border-radius: 10px; /* Rounded corners, optional */
+  margin: 0; /* Remove default margin */
+}
+
+/* Lightning McQueen image wrapper */
+.lightning-wrapper {
+    position: absolute;
+    top: 90%; /* Centers vertically */
+    left: -300px; /* Start off-screen */
+    /* transform: translateY(-50%); Center vertically */
+    z-index: 2; /* Ensures it’s above the trophies */
+    animation: moveRight 5s linear infinite; /* Add animation */
+  }
+  
+  /* Center and size the Lightning McQueen image */
+.lightning-wrapper img {
+    width: 300px; /* Set the width to your desired size */
+    max-width: 100%; /* Responsive scaling */
+}
+
+  /* Animation to move Lightning McQueen from left to right */
+@keyframes moveRight {
+    0% {
+      left: -300px; /* Start off-screen to the left */
+    }
+    100% {
+      left: 50vw; /* Move to the right side of the screen */
+    }
+  }
+
+/* Horizontal spin animation */
+@keyframes horizontalSpin {
+  0%, 100% { transform: rotateX(0deg); }
+  50% { transform: rotateY(360deg); } /* Complete flip along the X-axis */
+}
+
+/* Trophy styles */
+.trophy-group {
+    bottom: 0; /* Position at the bottom of the screen */
+    left: 0; /* Align trophies to the left */
+    width: 100%; /* Full width of the container */
+    height: 100px; /* Give enough height for trophies to bounce */
+    overflow: visible; /* Allow trophies to be visible */
+    z-index: 1; /* Ensure it's above road elements but below text */
+  }
+  
+  /* Base styles for trophies */
+  .trophy-group img {
+    width: 50px; /* Adjust size as needed */
+    /* position: absolute; */
+    animation: bounce 3.6s ease-in-out infinite; /* Infinite bounce animation */
+  }
+
+/* Initial positions and staggered animation delays for each trophy */
+.trophy1 { left: 10%; top: 0; animation-delay: 0s; }
+.trophy2 { left: 24%; top: 0; animation-delay: 0.3s; }
+.trophy3 { left: 32%; top: 0; animation-delay: 0.6s; }
+.trophy4 { left: 41%; top: 0; animation-delay: 0.9s; }
+.trophy5 { left: 48%; top: 0; animation-delay: 1.2s; }
+.trophy6 { left: 57%; top: 0; animation-delay: 1.5s; }
+.trophy7 { left: 65%; top: 0; animation-delay: 1.8s; }
+.trophy8 { left: 72%; top: 0; animation-delay: 2.1s; }
+.trophy9 { left: 86%; top: 0; animation-delay: 2.4s; }
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); } /* Start and end at the top */
+  50% { transform: translateY(80vh); } /* Fall to near the bottom */
+}
+
+
+.landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: lightsteelblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-text {
+    font-size: 100px;
+    font-weight: 700;
+    border: 8px solid black;
+    border-radius: 9999px;
+    padding: 40px 80px;
+    cursor: pointer;
+}
+
+.button-text:hover {
+    background-color: black;
+    color: white;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1; /* Make sure it is above other elements during fade-out */
+}
+/* 
+.road-wrapper,
+.trophy-group {
+    display: none;
+} */
